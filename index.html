@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>3D Image Slider</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="box">
+                <div class="card" style="--i: 1">
+                    <div class="imgBox">
+                        <img src="images/img1.jpg" alt="image 1" />
+                    </div>
+                    <h2>Silas Stone<br /><span>WebXR Designer</span></h2>
+                </div>
+
+                <div class="card" style="--i: 2">
+                    <div class="imgBox">
+                        <img src="images/img2.jpg" alt="image 2" />
+                    </div>
+                    <h2>Ember Blaze<br /><span>AI Developer</span></h2>
+                </div>
+
+                <div class="card" style="--i: 3">
+                    <div class="imgBox">
+                        <img src="images/img3.jpg" alt="image 3" />
+                    </div>
+                    <h2>
+                        Juniper Wren<br /><span>Accessibility Specialist</span>
+                    </h2>
+                </div>
+
+                <div class="card" style="--i: 4">
+                    <div class="imgBox">
+                        <img src="images/img4.jpg" alt="image 4" />
+                    </div>
+                    <h2>Selah Sky<br /><span>Metaverse Architect</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="btns">
+            <div class="prev"></div>
+            <div class="next"></div>
+        </div>
+
+        <script>
+            let prev = document.querySelector('.prev')
+            let next = document.querySelector('.next')
+            let box = document.querySelector('.box')
+            let degree = 0
+
+            prev.addEventListener('click', function () {
+                degree += 90
+                box.style = `transform: perspective(1000px) rotateY(${degree}deg)`
+            })
+
+            next.addEventListener('click', function () {
+                degree -= 90
+                box.style = `transform: perspective(1000px) rotateY(${degree}deg)`
+            })
+        </script>
+    </body>
+</html>
